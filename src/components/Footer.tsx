@@ -1,5 +1,6 @@
-import { Heart, Instagram, Twitter, Facebook, Mail } from "lucide-react";
+import { Heart, Instagram, Twitter, Facebook, Mail, Unlock } from "lucide-react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 export function Footer() {
   return (
@@ -13,10 +14,10 @@ export function Footer() {
                 transition={{ duration: 2, repeat: Infinity }}
                 className="bg-violet-600 p-1.5 rounded-lg"
               >
-                <Heart className="w-5 h-5 text-white fill-white" />
+                <Unlock className="w-5 h-5 text-white" />
               </motion.div>
               <span className="text-xl font-bold tracking-tight text-gray-900">
-                Connect<span className="text-violet-600">.</span>
+                Unlocked<span className="text-violet-600">Love</span>
               </span>
             </div>
             <p className="text-gray-500 text-sm leading-relaxed mb-6">
@@ -37,49 +38,49 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="font-bold text-gray-900 mb-6">Product</h4>
+            <h4 className="font-bold text-gray-900 mb-6 font-mono text-sm uppercase tracking-wider text-violet-600">Product</h4>
             <ul className="space-y-4 text-sm text-gray-500">
               {["How it works", "Features", "Safety", "Success Stories"].map((item) => (
                 <li key={item}>
-                  <a href={`#${item.toLowerCase().replace(/ /g, '-')}`} className="hover:text-violet-600 transition-colors">{item}</a>
+                  <a href={`#${item.toLowerCase().replace(/ /g, '-')}`} className="hover:text-violet-600 transition-colors font-medium">{item}</a>
                 </li>
               ))}
             </ul>
           </div>
 
           <div>
-            <h4 className="font-bold text-gray-900 mb-6">Legal</h4>
+            <h4 className="font-bold text-gray-900 mb-6 font-mono text-sm uppercase tracking-wider text-violet-600">Legal</h4>
             <ul className="space-y-4 text-sm text-gray-500">
               {["Terms of Service", "Privacy Policy", "Cookie Policy", "Safety Tips"].map((item) => (
                 <li key={item}>
-                  <a href="#" className="hover:text-violet-600 transition-colors">{item}</a>
+                  <a href="#" className="hover:text-violet-600 transition-colors font-medium">{item}</a>
                 </li>
               ))}
             </ul>
           </div>
 
           <div>
-            <h4 className="font-bold text-gray-900 mb-6">Contact</h4>
+            <h4 className="font-bold text-gray-900 mb-6 font-mono text-sm uppercase tracking-wider text-violet-600">Contact</h4>
             <ul className="space-y-4 text-sm text-gray-500">
-              <li className="flex items-center gap-2">
-                <Mail className="w-4 h-4" />
-                <span>support@connect.africa</span>
+              <li className="flex items-center gap-2 font-medium">
+                <Mail className="w-4 h-4 text-violet-600" />
+                <span>hello@unlockedlove.africa</span>
               </li>
-              <li>Nairobi, Kenya</li>
+              <li className="font-medium text-gray-400">Nairobi, Kenya</li>
             </ul>
           </div>
         </div>
 
         <div className="pt-10 border-t border-gray-200 flex flex-col md:flex-row justify-between items-center gap-6">
-          <p className="text-xs text-gray-400">
-            &copy; {new Date().getFullYear()} Connect. All rights reserved.
+          <p className="text-xs text-gray-400 font-medium">
+            &copy; {new Date().getFullYear()} Unlocked Love. All rights reserved.
           </p>
           <motion.p 
             animate={{ opacity: [0.4, 0.7, 0.4] }}
             transition={{ duration: 4, repeat: Infinity }}
-            className="text-[10px] text-gray-400 uppercase tracking-widest max-w-xs text-center md:text-right"
+            className="text-[10px] text-gray-400 uppercase tracking-widest max-w-xs text-center md:text-right font-bold"
           >
-            Free platform. Optional paid visibility only.
+            Nairobi's Free Dating Revolution
           </motion.p>
         </div>
       </div>

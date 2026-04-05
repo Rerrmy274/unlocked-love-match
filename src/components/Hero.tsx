@@ -1,17 +1,17 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Sparkles } from "lucide-react";
-import { toast } from "sonner";
+import { ArrowRight, Sparkles, Heart } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 export function Hero() {
+  const navigate = useNavigate();
+  
   const handleJoin = () => {
-    toast.success("Joining system is loading... Prepare for matches!", {
-      description: "You'll be part of the first 100 users in Nairobi.",
-    });
+    navigate("/signup");
   };
 
   return (
-    <section className="relative pt-32 pb-20 overflow-hidden bg-gradient-to-b from-violet-50/50 to-white">
+    <section className="relative pt-12 pb-20 md:pt-32 md:pb-32 overflow-hidden bg-gradient-to-b from-violet-50/50 to-white">
       {/* Background Decorative Elements with Infinite Motion */}
       <motion.div 
         animate={{ 
@@ -48,23 +48,24 @@ export function Hero() {
               className="inline-flex items-center gap-2 bg-violet-100 text-violet-700 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider w-fit"
             >
               <Sparkles className="w-3.5 h-3.5" />
-              <span>100% Free Messaging</span>
+              <span>100% Free Messaging Forever</span>
             </motion.div>
 
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-gray-900 leading-[1.1]">
-              Chat, Match, and Meet — <br />
-              <span className="text-violet-600 italic">Without</span> Paying a Single Shilling.
+              Unlock Real <br />
+              <span className="text-violet-600 italic">Connections</span> <br />
+              Without Paying.
             </h1>
 
             <p className="text-lg md:text-xl text-gray-600 max-w-xl leading-relaxed">
-              No subscriptions. No hidden limits. Real people, real connections.
+              No hidden paywalls. No limits on swipes. Just you and the people you want to meet on Unlocked Love.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="w-full sm:w-auto">
                 <Button 
                   onClick={handleJoin}
-                  className="w-full sm:w-auto bg-violet-600 hover:bg-violet-700 text-white h-14 px-10 text-lg rounded-full shadow-xl shadow-violet-200 transition-all duration-300"
+                  className="w-full sm:w-auto bg-violet-600 hover:bg-violet-700 text-white h-14 px-10 text-lg rounded-full shadow-xl shadow-violet-200 transition-all duration-300 font-bold"
                 >
                   Join Free Now
                   <ArrowRight className="ml-2 w-5 h-5" />
@@ -72,7 +73,7 @@ export function Hero() {
               </motion.div>
               <Button 
                 variant="outline" 
-                className="w-full sm:w-auto h-14 px-10 text-lg rounded-full border-2 border-violet-100 text-violet-700 hover:bg-violet-50 transition-all duration-300"
+                className="w-full sm:w-auto h-14 px-10 text-lg rounded-full border-2 border-violet-100 text-violet-700 hover:bg-violet-50 transition-all duration-300 font-medium"
                 onClick={() => document.getElementById('how-it-works')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 See How It Works
@@ -111,6 +112,21 @@ export function Hero() {
                 alt="Beautiful smiling woman" 
                 className="w-full h-auto object-contain drop-shadow-[0_20px_50px_rgba(139,92,246,0.3)]"
               />
+            </motion.div>
+            
+            {/* Floating Heart Cards */}
+            <motion.div
+              animate={{ x: [0, 10, 0], y: [0, -10, 0] }}
+              transition={{ duration: 4, repeat: Infinity, repeatType: "mirror" }}
+              className="absolute top-1/4 left-0 bg-white p-4 rounded-2xl shadow-xl border border-violet-100 flex items-center gap-3 z-20"
+            >
+              <div className="bg-red-50 p-2 rounded-lg">
+                <Heart className="w-5 h-5 text-red-500 fill-red-500" />
+              </div>
+              <div>
+                <p className="text-[10px] text-gray-400 font-bold uppercase tracking-wider leading-none">New Match!</p>
+                <p className="text-sm font-bold text-gray-900">Sarah liked you</p>
+              </div>
             </motion.div>
           </motion.div>
         </div>

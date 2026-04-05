@@ -28,7 +28,7 @@ export function Comparison() {
               <thead>
                 <tr className="bg-gray-50 border-b border-gray-100">
                   <th className="p-6 text-lg font-bold text-gray-900">Feature</th>
-                  <th className="p-6 text-lg font-bold text-violet-600 text-center">Connect</th>
+                  <th className="p-6 text-lg font-bold text-violet-600 text-center whitespace-nowrap">Unlocked Love</th>
                   <th className="p-6 text-lg font-bold text-gray-400 text-center">Others</th>
                 </tr>
               </thead>
